@@ -1,4 +1,5 @@
 var myUser = new User()
+var myDatabase = new Database()
 
 function showTodoListContent() {
     $("#loginContent").hide("slow")
@@ -33,4 +34,12 @@ $(document).ready(function() {
             alert("Verifique seus dados e tente novamente")
         }
     })
+
+    $('#buttonAddToDo').click(function() {
+        var input = $("#inputToDo").val()
+        if (input != "") {
+            myDatabase.insertRow(input)
+        }
+    })
+
 })
